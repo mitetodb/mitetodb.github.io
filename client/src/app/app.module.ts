@@ -13,6 +13,7 @@ import { CreateComponent } from './recipes/create/create.component';
 import { DetailsComponent } from './recipes/details/details.component';
 import { EditComponent } from './recipes/edit/edit.component';
 import { IngredientsComponent } from './ingredients/ingredients.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { IngredientsComponent } from './ingredients/ingredients.component';
     CreateComponent,
     DetailsComponent,
     EditComponent,
-    IngredientsComponent
+    IngredientsComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
