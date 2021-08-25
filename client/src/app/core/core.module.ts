@@ -12,7 +12,6 @@ import { RouterModule } from '@angular/router';
     FooterComponent
   ],
   imports: [
-    CommonModule,
     RouterModule,
   ],
   exports: [
