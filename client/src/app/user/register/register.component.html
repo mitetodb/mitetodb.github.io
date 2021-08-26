@@ -1,1 +1,46 @@
-<p>register works!</p>
+<p>Register Page</p>
+
+<form #form="ngForm" (ngSubmit)="registerHandler(form)">
+    <div class="form-group">
+        <label for="first-name">First Name</label>
+        <input type="text" name="firstName" id="first-name" #firstNameInput="ngModel" ngModel required [minlength]="3">
+        <ul *ngIf="firstNameInput.invalid && firstNameInput.touched" class="errors">
+            <li *ngIf="firstNameInput.errors?.required">First name is required.</li>
+            <li *ngIf="firstNameInput.errors?.minlength">First name should be more then 3 characters.</li>
+        </ul>
+    </div>
+    <div class="form-group">
+        <label for="last-name">Last Name</label>
+        <input type="text" name="lastName" id="last-name" #lastNameInput="ngModel" ngModel required [minlength]="3">
+        <ul *ngIf="lastNameInput.invalid && lastNameInput.touched" class="errors">
+            <li *ngIf="lastNameInput.errors?.required">Last name is required.</li>
+            <li *ngIf="lastNameInput.errors?.minlength">Last name should be more then 3 characters.</li>
+        </ul>
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" #emailInput="ngModel" ngModel required email>
+        <ul *ngIf="emailInput.invalid && emailInput.touched" class="errors">
+            <li *ngIf="emailInput.errors?.required">Email is required.</li>
+            <li *ngIf="emailInput.errors?.email">Email is invalid.</li>
+        </ul>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" #passwordInput="ngModel" ngModel required [minlength]="5">
+        <ul *ngIf="passwordInput.invalid && passwordInput.touched" class="errors">
+            <li *ngIf="passwordInput.errors?.required">Password is required.</li>
+            <li *ngIf="passwordInput.errors?.minlength">Password should be more then 5 characters.</li>
+        </ul>
+    </div>
+    <div class="form-group">
+        <label for="repeat-password">Repeat Password</label>
+        <input type="repeatPassword" name="repeatPassword" id="repeat-password" #repeatPasswordInput="ngModel" ngModel appSameValue="password" required [minlength]="5">
+        <ul *ngIf="repeatPasswordInput.invalid && repeatPasswordInput.touched" class="errors">
+            <li *ngIf="repeatPasswordInput.errors?.required">Repeat password is required.</li>
+            <li *ngIf="repeatPasswordInput.errors?.minlength">Repeat password should be more then 5 characters.</li>
+            <li *ngIf="repeatPasswordInput.errors?.sameValue">Password and repeat password don't match.</li>
+        </ul>
+    </div>
+    <button>Register</button>
+</form>

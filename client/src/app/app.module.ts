@@ -17,6 +17,8 @@ import { EditComponent } from './recipes/edit/edit.component';
 import { ProfileComponent } from './user/profile/profile.component';
 import { LoginComponent } from './user/login/login.component';
 import { RegisterComponent } from './user/register/register.component';
+import { FormsModule } from '@angular/forms';
+import { SameValueDirective } from './user/same-value.directive';
 
 @NgModule({
   declarations: [
@@ -31,12 +33,14 @@ import { RegisterComponent } from './user/register/register.component';
     CreateComponent,
     DetailsComponent,
     EditComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    SameValueDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CoreModule
+    CoreModule,
+    FormsModule
   ],
   providers: [
     ContentService,

@@ -1,8 +1,11 @@
+import { IRecipe } from "./recipe";
+
 export interface IUser {
     id: string,
-    title: string,
     firstName: string,
     lastName: string,
     email: string,
-    recipes: string[]
+    password: string,
+    imageUrl: string,
+    recipes: IRecipe[]
 }
